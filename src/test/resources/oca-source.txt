@@ -1,0 +1,442 @@
+{| class="wikitable"
+|-
+! Name
+! Company
+! Sourceforge (github) ID
+|-
+| Alvarez, Neiman
+| General Dynamics Information Technology
+| [https://github.com/nalvarez2051/ nalvarez2051]
+|-
+| Aras, Jason
+|
+| [http://sourceforge.net/users/jasonaras/ jasonaras]
+|-
+| Ayres, Bill
+|
+| [http://sourceforge.net/users/ayresb/ ayresb]
+|-
+| Balog, Tarus
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/tarus/ tarus]
+|-
+| Barinov, Vladislav
+|
+| [http://sourceforge.net/users/teren/ teren]
+|-
+| Batz, Michael
+| [http://www.nethinks.com NETHINKS]
+| [http://sourceforge.net/users/teren/ michael-nt]
+|-
+| Brozowski, Matt
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/brozow/ brozow]
+|-
+| Bennée, Alex
+|
+|
+|-
+| Callaghan, Jerome
+| [http://www.towerstream.com Towerstream Corporation]
+| [http://sourceforge.net/users/jeromecallaghan jeromecallaghan]
+|-
+| Castello, Andrea
+|
+|[http://sourceforge.net/users/andreacastello andreacastello]
+|-
+| Corcoran, Chris (collected 16 July 2014 -jeffg)
+|
+| [http://sourceforge.net/users/chriscork/ chriscork]
+|-
+| Danko, Mike
+|
+|[http://sourceforge.net/users/mikedanko mikedanko]
+|-
+| Dessì, Massimiliano
+|
+| [http://sourceforge.net/users/desmax74/ desmax74]
+|-
+| Desloge, Donald
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/thedesloge/ thedesloge]
+|-
+| Doble, Jim
+| Tavve
+|
+|-
+| Donohue, Paul
+|
+| [http://sourceforge.net/users/paulsd/ paulsd]
+|-
+| Drake, Robert
+| [http://www.direcpath.tv/ DirecPath]
+| N/A
+|-
+| Dyck, Tim Miller
+|
+| [https://github.com/TimMillerDyck TimMillerDyck]
+|-
+| Dymek, William
+|
+|
+|-
+| Edstrom, Johan
+|
+| [http://sourceforge.net/users/joed/ joed] ** Note: not listed as a Developer
+|-
+| Eshelby, Ken
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/eshelbyk/ eshelbyk]
+|-
+| Evans, Alan
+|
+|
+|-
+| Evans, Eric
+|
+| [http://github.com/jericevans/ jericevans]
+|-
+| Falzone, Tim
+|
+|
+|-
+| Forster, Aaron
+|
+| [http://sourceforge.net/users/pastfinder/ pastfinder]
+|-
+| Frisch, Dustin
+|
+| [http:s//github.com/fooker fooker]
+|-
+| Fuhrmann, Marcel
+|
+| [https://github.com/mfuhrmann mfuhrmann]
+|-
+| Galea, Melania
+|
+|
+|-
+| Gallen, Craig
+|
+| [http://sourceforge.net/users/cgallen/ cgallen]
+|-
+| Galue, Alejandro
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/agalue/ agalue]
+|-
+| Gehlbach, Jeff
+| The OpenNMS Group, Inc.
+| [http://github.com/jeffgdotorg/ jeffgdotorg]
+|-
+| Giraudeau, Jean-Baptiste
+|
+|
+|-
+| Gregor, DJ
+|
+| [http://sourceforge.net/users/djgregor/ djgregor]
+|-
+|-
+| Grueninger, Andreas
+| Grueninger GmbH
+| [https://github.com/grueni grueni]
+|-
+| Hamill, Gavin
+| Zen Internet
+| [http://sourceforge.net/users/gdh-at-zen/ gdh-at-zen]
+|-
+| Hammerton, Corey
+|
+| [http://github.com/corey-hammerton/ corey-hammerton]
+|-
+| Heisey, Shawn
+| Mainstream Data, Inc
+| [http://sourceforge.net/users/elyograg/ elyograg]
+|-
+| Hemmler, Thorben
+|
+|
+|-
+| Hillier, Stephen
+|
+|
+|-
+|Hoogerhuis, Alex
+|
+|
+|-
+| Huot, Mike
+|
+| [http://sourceforge.net/users/mhuot/ mhuot]
+|-
+| Hustace, David
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/dhustace/ dhustace]
+|-
+| Johnson, Lance
+|
+|
+|-
+| Keating, Mark
+| Shadowcat Systems Limited
+| [http://github.com/shadowcat-mdk/ shadowcat-mdk]
+|-
+| Lambeth, Michael Ryan
+| The OpenNMS Group, Inc.
+| [http://github.com/mrlambeth/ mrlambeth]
+|-
+| Li, Chen
+|
+| [https://github.com/ChenLi0830 ChenLi0830]
+|-
+| Klein, Dominik
+| IN-telegence Gmbh
+|
+|-
+| Kostes, Bob
+| Alternative Management Technology
+| [http://sourceforge.net/users/rkostes/ rkostes]
+|-
+| Krupczak, Bobby
+|
+| [http://sourceforge.net/users/therdk/ therdk]
+|-
+| Kubek, Jean-Marie (bofh.jr (at) gmail)
+|
+|
+|-
+| Leger, Seth
+| The OpenNMS Group, Inc.
+| [https://github.com/soleger soleger]
+|-
+| Liles, Chris
+| Capario
+| [https://github.com/cliles-capario cliles-capario]
+|-
+| Liu, Daniel
+| Juniper Networks
+| [http://sourceforge.net/users/daquanliu daquanliu]
+|-
+| Mackintosh, Duncan
+| Cambridge Broadband Networks Ltd.
+| [http://sourceforge.net/users/dijm3/ dijm3]
+|-
+| Martini, Peter
+|
+| [http://sourceforge.net/users/setpeterm/ setpeterm]
+|-
+| Mayo, Jessica
+|
+|
+|-
+| Michelbrink, Thomas
+|
+|[http://sourceforge.net/users/tmichelbrink tmichelbrink]
+|-
+| Miskell, Craig
+|
+| [http://sourceforge.net/users/cmiskell/ cmiskell]
+|-
+| Munasinghe, Tharindu
+|
+| [http://sourceforge.net/users/tharindu-m/ tharindu-m]
+|-
+| Mutel, Samuel
+|
+|
+|-
+| Nalla, Vivek
+|
+| [http://sourceforge.net/users/nallagsoc/ nallagsoc]
+|-
+| Neumann, Markus
+|
+|
+|-
+| Neylan, Christopher
+|
+|
+|-
+| Nixon, Peter
+|
+| [http://sourceforge.net/users/peternixon/ peternixon]
+|-
+| Nowaczyk, Tim
+|
+| [http://sourceforge.net/users/tim_nowaczyk/ tim_nowaczyk]
+|-
+| Norton, Ian
+| Shadowcat Systems Ltd
+| [http://sourceforge.net/users/idnorton/ idnorton]
+|-
+| Nowaczyk, Tim
+|
+| [http://sourceforge.net/users/tim_nowaczyk/ tim_nowaczyk]
+|-
+| Oh, David
+|
+|
+|-
+| Ollie, Jeffery C.
+|
+| [http://sourceforge.net/users/jcollie/ jcollie]
+|-
+| Osman, Corey
+| Logic Minds Corp
+|
+|-
+| Ovsyuk, Sergey Nikolayevich
+|
+| [https://github.com/osergey osergey]
+|-
+| Palsson, Bret
+|
+| [http://sourceforge.net/users/bretpalsson CamargoBP]
+|-
+| Panon, Paul-André
+| Sierra Systems Group, Inc.
+| [https://sourceforge.net/users/ppanon2005/ ppanon2005]
+|-
+| Pape, Christian
+| University of Applied Sciences Fulda
+| [https://sourceforge.net/users/cpape/ cpape]
+|-
+| Pennington, Thomas
+| General Dynamics Information Technology
+| [https://github.com/tompenning/ tompenning]
+|-
+| Piras, Daniele
+| Pronetics S.p.A
+| [http://sourceforge.net/users/danielepiras80/ danielepiras80]
+|-
+| Prokofyev, Roman
+|
+|
+|-
+| Ravichandran, Nugunthan
+|
+|
+|-
+| Raykowski, Matt
+|
+| [http://sourceforge.net/users/mattraykowski/ mattraykowski]
+|-
+| Reed, Ben
+| The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/rangerrick/ rangerrick] ** note: not listed as a Developer
+|-
+| Rionero, Rocco
+| Rocco Rionero
+| [http://sourceforge.net/users/rionero/ rionero]
+|-
+| Roskens, Ronald J.
+|
+|
+|-
+| Russo, Antonio
+| ARS Informatica s.a.s.
+| [https://github.com/rssntn67/ rssntn67]
+|-
+| von Rüden, Markus
+|
+| [http://sourceforge.net/users/mvrueden/ mvrueden]
+|-
+| Santoro, Guiseppe
+| Pro-netics, SPA
+|
+|-
+| Sartin, Jonathan
+| Black Poplar LTD.
+| [http://sourceforge.net/users/jsartin/ jsartin]
+|-
+| Supun, Pulasthi
+|
+| [http://sourceforge.net/users/pulasthi/ pulasthi]
+|-
+| Schlenk, David
+| Spanlink
+| [https://github.com/dschlenk dschlenk]
+|-
+| Shahzada Hatim Mushtaq (collected 24 July 2014, jeffg)
+|
+| [http://sourceforge.net/users/geoaxis/ geoaxis]
+|-
+| Spragg, Keith
+|
+| [https://github.com/spraggle spraggle]
+|-
+| Topping, Brian
+| Mauswerks LLC
+| [http://sourceforge.net/users/topping/ topping]
+|-
+| Trommer, Ronny
+|
+| [https://github.com/indigo423 indigo423]
+|-
+| Tsukanov, Roman
+|
+| [https://github.com/tsukanov/ tsukanov]
+|-
+| Vishwa, Abhinav
+|
+| [http://sourceforge.net/users/avishwa18/ avishwa18]
+|-
+| Walter, Simon
+|
+| [http://sourceforge.net/users/realthargor/ realthargor]
+|-
+| White, Jesse
+| Datavalet, The OpenNMS Group, Inc.
+| [http://sourceforge.net/users/j-white j-white]
+|-
+| Zhan, YongHua
+| Juniper Networks
+| [http://sourceforge.net/users/yhzhan yhzhan]
+|-
+|}
+
+Developers not listed above (i.e.: we need to hunt these down &lt;grin&gt;):
+
+{| class="wikitable"
+! Name
+! Company
+! Sourceforge ID
+|-
+| Andrew Nelson
+|
+| [http://sourceforge.net/users/a_nelson/ a_nelson]
+|-
+| C. Rory Forbes
+|
+| [http://sourceforge.net/users/croryf/ croryf]
+|-
+| Guglielmo Incisa di Camerana
+|
+| [http://sourceforge.net/users/guic/ guic]
+|-
+| Brad Haynes
+|
+| [http://sourceforge.net/users/londonbrad/ londonbrad]
+|-
+| Miguel Ángel Ferrer
+|
+| [http://sourceforge.net/users/maferrer/ maferrer]
+|-
+| maurizio migliore
+|
+| [http://sourceforge.net/users/maurmig/ maurmig]
+|-
+| Michele
+|
+| [http://sourceforge.net/users/micmas76/ micmas76]
+|-
+| Samuel Louvan (Attempting contact -jeffg)
+|
+| [http://sourceforge.net/users/s_louvan/ s_louvan]
+|-
+| Min Zhang
+|
+| [http://sourceforge.net/users/zhangmin0215/ zhangmin0215]
+|}
+
+[[Category:Community]]
