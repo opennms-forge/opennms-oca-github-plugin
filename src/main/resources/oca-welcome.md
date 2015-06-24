@@ -1,4 +1,4 @@
-Welcome :githubid:.
+Welcome @:githubid:.
 
 We would like to thank you for your contribution.
 

@@ -1,1 +1,0 @@
-:white_check_mark: An OpenNMS Contributor Agreement exists for @:githubid: (:user:)

@@ -31,20 +31,25 @@ public class ContributorAgreementService {
 
     private class PullRequestHandler implements Handler {
         public Response handle(OCAChecker ocaChecker, String payload) {
-            String user = getUser(payload, "pull_request");
+
             try {
-                boolean hasOcaSigned = ocaChecker.hasUserOCASigned(user);
-                String content = getContent(hasOcaSigned, user);
                 String pullRequestNumber = getPullRequestNumber(payload, null);
-                githubApi.createCommentOnIssue(pullRequestNumber, content);
+                String sha = getSha(payload);
+                githubApi.updateStatus(sha, GithubApi.State.Pending);
+
+                String user = getUser(payload, "pull_request");
+                boolean hasOcaSigned = ocaChecker.hasUserOCASigned(user);
+                githubApi.updateStatus(sha, hasOcaSigned ? GithubApi.State.Success : GithubApi.State.Error);
+                if (!hasOcaSigned) {
+                    String content = loadWelcomeContent(user);
+                    githubApi.createCommentOnIssue(pullRequestNumber, content);
+                }
 
                 return null;
             } catch (IOException | URISyntaxException io) {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
             }
         }
-
-
     }
 
     private String getPullRequestNumber(String payload, String root) {
@@ -55,9 +60,9 @@ public class ContributorAgreementService {
         return Long.toString(payloadObject.getLong("number"));
     }
 
-    private String getContent(boolean hasOcaSigned, String user) throws IOException, URISyntaxException {
+    private String loadWelcomeContent(String user) throws IOException, URISyntaxException {
         Contributor contributor = ocaChecker.getContributor(user);
-        URL resourceURL = hasOcaSigned ?  getClass().getResource("/oca-signed.md") : getClass().getResource("/oca-not-signed.md");
+        URL resourceURL = getClass().getResource("/oca-welcome.md");
         byte[] bytes = Files.readAllBytes(Paths.get(resourceURL.getPath()));
         String content = new String(bytes);
         content = content.replaceAll(":githubid:", user);
@@ -65,6 +70,11 @@ public class ContributorAgreementService {
             content = content.replaceAll(":user:", contributor.getName());
         }
         return content;
+    }
+
+    private String getSha(String payload) {
+        JSONObject payloadObject = new JSONObject(payload);
+        return payloadObject.getJSONObject("pull_request").getJSONObject("head").getString("sha");
     }
 
     // TODO MVR implement accordingly
@@ -81,12 +91,12 @@ public class ContributorAgreementService {
             String body = jsonObject.getJSONObject("comment").getString("body");
             if (Pattern.compile(OCA_REDO_COMMENT, Pattern.CASE_INSENSITIVE).matcher(body).matches()) {
                 // TODO MVR verreinfachen....
-                String user = getUser(payload, "issue");
                 try {
+                    Long issueNumber = jsonObject.getJSONObject("issue").getLong("number");
+                    String user = getUser(payload, "issue");
+                    String sha = getSha(issueNumber);
                     boolean hasOcaSigned = ocaChecker.hasUserOCASigned(user);
-                    String content = getContent(hasOcaSigned, user);
-                    String pullRequestNumber = getPullRequestNumber(payload, "issue");
-                    githubApi.createCommentOnIssue(pullRequestNumber, content);
+                    githubApi.updateStatus(sha, hasOcaSigned ? GithubApi.State.Success : GithubApi.State.Error);
 
                     return null;
                 } catch (IOException | URISyntaxException io) {
@@ -95,6 +105,12 @@ public class ContributorAgreementService {
 
             }
             return null;
+        }
+
+        private String getSha(Long issueNumber) throws IOException {
+            String responseContent = githubApi.getPullRequestInfo(String.valueOf(issueNumber));
+            JSONObject jsonObject = new JSONObject(responseContent);
+            return jsonObject.getJSONObject("head").getString("sha");
         }
     }
 
