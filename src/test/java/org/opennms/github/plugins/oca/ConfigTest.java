@@ -22,6 +22,7 @@ public class ConfigTest {
         Assert.assertNotNull(Config.GITHUB_API_TOKEN);
         Assert.assertNotNull(Config.GITHUB_USER);
         Assert.assertNotNull(Config.GITHUB_REPO);
+        Assert.assertNotNull(Config.GITHUB_WEBHOOK_SECRET);
         Assert.assertNotNull(Config.OCA_WIKI_URL_PAGE_RAW_EDIT);
         Assert.assertNotNull(Config.OCA_REDO_COMMENT_REGEXP);
     }
@@ -35,6 +36,8 @@ public class ConfigTest {
         Assert.assertEquals(Config.getProperty("github.api.token", "bla"), "ulf ulf ulf");
         Assert.assertEquals(Config.getProperty("github.user", "bla"), "custom-user");
         Assert.assertEquals(Config.getProperty("github.repository", "bla"), "custom-repository");
+
+        Assert.assertEquals(Config.getProperty("github.webhook.secret", "bla"), "some custom secret");
 
         Assert.assertEquals(Config.getProperty("oca.redo.regexp", "bla"), "custom regexp");
         Assert.assertEquals(Config.getProperty("oca.url.edit-raw-page", "bla"), "custom page");

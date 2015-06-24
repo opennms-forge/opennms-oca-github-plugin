@@ -18,6 +18,8 @@ public class Config {
 
     public static final String GITHUB_REPO = getProperty("github.repository", "opennms");
 
+    public static final String GITHUB_WEBHOOK_SECRET  = getProperty("github.webhook.secret", "");
+
     public static final String OCA_REDO_COMMENT_REGEXP = getProperty("oca.redo.regexp", ".*alfred.*oca.*");
 
     public static final String OCA_WIKI_URL_PAGE_RAW_EDIT = getProperty("oca.url.edit-raw-page", "http://www.opennms.org/w/index.php?title=Executed_contributor_agreements&action=raw");
