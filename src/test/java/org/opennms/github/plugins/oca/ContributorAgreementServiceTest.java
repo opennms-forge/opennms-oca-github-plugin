@@ -21,7 +21,7 @@ public class ContributorAgreementServiceTest {
 
     @Test
     public void testWikiDownload() throws IOException, URISyntaxException {
-        OCAChecker ocaChecker = new OCAChecker(new URL(ContributorAgreementService.OCA_WIKI_RAW_URL));
+        OCAChecker ocaChecker = new OCAChecker(new URL(Config.OCA_WIKI_URL_PAGE_RAW_EDIT));
         Assert.assertNotNull(ocaChecker.getContributor("mvrueden"));
     }
 

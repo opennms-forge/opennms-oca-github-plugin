@@ -14,6 +14,9 @@ import java.util.regex.Pattern;
 public class OCAChecker {
 
     private final URL ocaSource;
+    private boolean forceReload;
+    private List<Contributor> contributorList;
+    private long lastReload;
 
     public OCAChecker(URL ocaSource) {
         this.ocaSource = ocaSource;
@@ -24,12 +27,12 @@ public class OCAChecker {
         return contributor != null;
     }
 
-    private List<Contributor> loadFromPath() throws IOException, URISyntaxException {
-        return loadFromPath(ocaSource);
-    }
-
     public Contributor getContributor(String user) throws IOException, URISyntaxException {
-        List<Contributor> contributorList = loadFromPath();
+        if (shouldReload()) {
+            lastReload = System.currentTimeMillis();
+            contributorList = loadFromPath();
+            forceReload = false;
+        }
 
         for (Contributor eachContributor : contributorList) {
             if (eachContributor.getGithubId().equals(user)) {
@@ -37,6 +40,23 @@ public class OCAChecker {
             }
         }
         return null;
+    }
+
+    public void setForceReload(boolean forceReload) {
+        this.forceReload = forceReload;
+    }
+
+    private List<Contributor> loadFromPath() throws IOException, URISyntaxException {
+        return loadFromPath(ocaSource);
+    }
+
+    private boolean shouldReload() {
+        if (forceReload
+                || contributorList == null
+                || (System.currentTimeMillis() - lastReload >= 10000) /* Only reload every 10 seconds */ ) {
+            return true;
+        }
+        return false;
     }
 
     private static List<Contributor> loadFromPath(URL url) throws IOException, URISyntaxException {

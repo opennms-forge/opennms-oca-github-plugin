@@ -3,8 +3,7 @@ A github service hook to handle new contributions (via pull requests) to the Ope
 = TODOs
 
  * Authenticate at the service
- * Make repository, owner and keys configurable (properties file?)
- * Consider the fact that a pull request may contain multiple contributors (is not supported at the moment)
- * Make the code nice and clean
  * add comments
+ * Consider the fact that sometimes a commiter cannot be found
+ * remove TODOs in code
  * try
