@@ -3,6 +3,7 @@ package org.opennms.github.plugins.oca;
 import com.google.common.io.BaseEncoding;
 import org.opennms.github.plugins.oca.handlers.Handler;
 import org.opennms.github.plugins.oca.handlers.IssuecommentRequestHandler;
+import org.opennms.github.plugins.oca.handlers.PingRequestHandler;
 import org.opennms.github.plugins.oca.handlers.PullRequestHandler;
 
 import javax.crypto.Mac;
@@ -43,6 +44,7 @@ public class ContributorAgreementService {
         ocaChecker = new OCAChecker(new URL(Config.OCA_WIKI_URL_PAGE_RAW_EDIT));
 
         // These events are supported by our API
+        responseHandlerMap.put("ping", new PingRequestHandler());
         responseHandlerMap.put("pull_request", new PullRequestHandler(githubApi));
         responseHandlerMap.put("issue_comment", new IssuecommentRequestHandler(githubApi));
 

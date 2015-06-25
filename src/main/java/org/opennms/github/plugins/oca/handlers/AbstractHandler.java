@@ -1,6 +1,7 @@
 package org.opennms.github.plugins.oca.handlers;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.opennms.github.plugins.oca.GithubApi;
 
 import java.io.IOException;
@@ -22,10 +23,6 @@ abstract class AbstractHandler implements Handler {
         return extractContributorSet(commitJsonArray);
     }
 
-    protected Set<String> getContributorSet(Long pullRequestNumber) throws IOException {
-        return getContributorSet(String.valueOf(pullRequestNumber));
-    }
-
     protected GithubApi getGithubApi() {
         return githubApi;
     }
@@ -34,9 +31,13 @@ abstract class AbstractHandler implements Handler {
         Set<String> contributorSet = new HashSet<>();
         for (int i = 0; i < commitJsonArray.length(); i++) {
             // We have to exclude commits with no committer
-            // TODO MVR figure out why the committer is null
-            if (!commitJsonArray.getJSONObject(i).isNull("committer")) {
-                String committerId = commitJsonArray.getJSONObject(i).getJSONObject("committer").getString("login");
+            JSONObject eachElement = commitJsonArray.getJSONObject(i);
+            if (eachElement.isNull("committer")) {
+                // TODO MVR we may have to add a mapping for email or user name to github ids
+                JSONObject committer = eachElement.getJSONObject("commit").getJSONObject("committer");
+                contributorSet.add(String.format("%s (%s)", committer.getString("name"), committer.getString("email")));
+            } else {
+                String committerId = eachElement.getJSONObject("committer").getString("login");
                 contributorSet.add(committerId);
             }
         }

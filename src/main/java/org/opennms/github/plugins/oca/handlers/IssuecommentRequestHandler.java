@@ -23,7 +23,7 @@ public class IssuecommentRequestHandler extends AbstractHandler {
         String body = jsonObject.getJSONObject("comment").getString("body");
         if (Pattern.compile(Config.OCA_REDO_COMMENT_REGEXP, Pattern.CASE_INSENSITIVE).matcher(body).matches()) {
             ocaChecker.setForceReload(true);
-            Long requestNumber = jsonObject.getJSONObject("issue").getLong("number");
+            String requestNumber = String.valueOf(jsonObject.getJSONObject("issue").getLong("number"));
             String sha = getSha(requestNumber);
             Set<String> contributorSet = getContributorSet(requestNumber);
             for (String eachContributor : contributorSet) {
@@ -34,10 +34,10 @@ public class IssuecommentRequestHandler extends AbstractHandler {
         return null;
     }
 
-    private String getSha(Long issueNumber) throws IOException {
+    private String getSha(String issueNumber) throws IOException {
         // The issue comment does not contain enough information about the issue/pull request.
         // We request the information and return the latest commit on the issue/pull request
-        String responseContent = getGithubApi().getPullRequestInfo(String.valueOf(issueNumber));
+        String responseContent = getGithubApi().getPullRequestInfo(issueNumber);
         JSONObject jsonObject = new JSONObject(responseContent);
         return jsonObject.getJSONObject("head").getString("sha");
     }

@@ -7,3 +7,4 @@ A github service hook to handle new contributions (via pull requests) to the Ope
  * remove TODOs in code
  * add Logging
  * try
+ * Add @ to address everyone personally

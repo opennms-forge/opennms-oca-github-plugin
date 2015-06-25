@@ -1,4 +1,4 @@
-Welcome @:githubid:.
+Welcome :githubid:.
 
 We would like to thank you for your contribution.
 
@@ -10,5 +10,3 @@ The OpenNMS Contributor Agreement can be downloaded [here](http://www.opennms.or
 Please send a signed copy to oca@opennms.org.
 
 If you need more information, please visit http://www.opennms.org/wiki/Contributor_Agreement
-
-
