@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Owners",
+    "id": 100002,
+    "slug": "owners",
+    "description": null,
+    "permission": "admin",
+    "url": "https://api.github.com/teams/100002",
+    "members_url": "https://api.github.com/teams/100002/members{/member}",
+    "repositories_url": "https://api.github.com/teams/100002/repos"
+  },
+  {
+    "name": "Committers",
+    "id": 100001,
+    "slug": "committers",
+    "description": null,
+    "permission": "push",
+    "url": "https://api.github.com/teams/100001",
+    "members_url": "https://api.github.com/teams/100001/members{/member}",
+    "repositories_url": "https://api.github.com/teams/100001/repos"
+  },
+  {
+    "name": "OCA Admins",
+    "id": 100003,
+    "slug": "oca-admins",
+    "description": "",
+    "permission": "pull",
+    "url": "https://api.github.com/teams/100003",
+    "members_url": "https://api.github.com/teams/100003/members{/member}",
+    "repositories_url": "https://api.github.com/teams/100003/repos"
+  },
+  {
+    "name": "OGP",
+    "id": 100004,
+    "slug": "ogp",
+    "description": null,
+    "permission": "push",
+    "url": "https://api.github.com/teams/100004",
+    "members_url": "https://api.github.com/teams/100004/members{/member}",
+    "repositories_url": "https://api.github.com/teams/100004/repos"
+  },
+  {
+    "name": "TOG",
+    "id": 100005,
+    "slug": "tog",
+    "description": null,
+    "permission": "admin",
+    "url": "https://api.github.com/teams/100005",
+    "members_url": "https://api.github.com/teams/100005/members{/member}",
+    "repositories_url": "https://api.github.com/teams/100005/repos"
+  }
+]

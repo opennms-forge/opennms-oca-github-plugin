@@ -3,11 +3,19 @@ package org.opennms.github.plugins.oca;
 import com.google.common.io.ByteStreams;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,33 +25,78 @@ public class OCAChecker {
     private boolean forceReload;
     private List<Contributor> contributorList;
     private long lastReload;
+    private final String mappingFileLocation;
 
-    public OCAChecker(URL ocaSource) {
+    public OCAChecker(URL ocaSource, String mappingFileLocation) {
         this.ocaSource = ocaSource;
+        this.mappingFileLocation = mappingFileLocation;
     }
 
-    public boolean hasUserOCASigned(String user) throws IOException, URISyntaxException {
-        Contributor contributor = getContributor(user);
-        return contributor != null;
-    }
-
-    public Contributor getContributor(String user) throws IOException, URISyntaxException {
+    public boolean hasUserOCASigned(Committer committer) throws IOException, URISyntaxException {
         if (shouldReload()) {
             lastReload = System.currentTimeMillis();
             contributorList = loadFromPath();
+            mergeWithManuallyApproved(contributorList);
             forceReload = false;
         }
 
         for (Contributor eachContributor : contributorList) {
-            if (eachContributor.getGithubId().equals(user)) {
-                return eachContributor;
+            // we have a github id, so we only have to look in the contributors list
+            if (committer.getGithubId() != null &&  committer.getGithubId().equals(eachContributor.getGithubId())) {
+                return true;
+            }
+            if (committer.getEmail() != null && eachContributor.matchesEmail(committer.getEmail())){
+                return true;
             }
         }
-        return null;
+        return false;
+
+    }
+
+    private void mergeWithManuallyApproved(List<Contributor> contributorSet) throws IOException {
+        Properties properties = loadProperties();
+
+        // we iterate over each mapping and assign the email address to
+        // the contributor
+        for (Map.Entry<Object, Object> eachEntry : properties.entrySet()) {
+            for (Contributor eachContributor : contributorSet) {
+                String githubId = (String) eachEntry.getValue();
+                if (eachContributor.getGithubId().equals(githubId)) {
+                    eachContributor.addEmail((String) eachEntry.getKey());
+                }
+            }
+        }
+    }
+
+    private Properties loadProperties() throws IOException {
+        Properties p = new Properties();
+        if (mappingFileLocation != null) {
+            Path path = Paths.get(mappingFileLocation);
+            if (Files.exists(path)) {
+                p.load(new FileInputStream(mappingFileLocation));
+            }
+        }
+        return p;
+    }
+
+    private void saveProperties(Properties p) throws IOException {
+        Objects.requireNonNull(mappingFileLocation, "No mapping file location defined.");
+        try (FileOutputStream outputStream = new FileOutputStream(mappingFileLocation)) {
+            p.store(outputStream, "Additional email to github id mappings to consider for OCA-Check");
+        }
     }
 
     public void setForceReload(boolean forceReload) {
         this.forceReload = forceReload;
+    }
+
+    public void approve(String githubId, String email) throws IOException {
+        Properties p = loadProperties();
+        if (!p.containsKey(email)) {
+            p.put(email, githubId);
+            saveProperties(p);
+            setForceReload(true);
+        }
     }
 
     private List<Contributor> loadFromPath() throws IOException, URISyntaxException {

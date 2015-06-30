@@ -40,8 +40,8 @@ public class ContributorAgreementService {
     private final Map<String, Handler> responseHandlerMap = new HashMap<>();
 
     public ContributorAgreementService() throws MalformedURLException, InvalidKeyException, NoSuchAlgorithmException {
-        githubApi = new GithubApi();
-        ocaChecker = new OCAChecker(new URL(Config.OCA_WIKI_URL_PAGE_RAW_EDIT));
+        githubApi = new GithubApiV3();
+        ocaChecker = new OCAChecker(new URL(Config.OCA_WIKI_URL_PAGE_RAW_EDIT), Config.MAPPING_FILE_LOCATION);
 
         // These events are supported by our API
         responseHandlerMap.put("ping", new PingRequestHandler());

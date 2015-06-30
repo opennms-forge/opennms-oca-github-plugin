@@ -1,164 +1,30 @@
 package org.opennms.github.plugins.oca;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.io.IOException;
 
 /**
- * Created by mvrueden on 23/06/15.
+ * Created by mvrueden on 30/06/15.
  */
-public class GithubApi {
-
+public interface GithubApi {
     public enum State {
         Pending, Error, Success;
     }
 
-    private interface Predicate {
-        WebTarget updateTarget(WebTarget target);
-        Response doRequest(Invocation.Builder invocation);
-    }
-
-    private String doRequest(Predicate predicate) throws IOException {
-        Client client = ClientBuilder.newClient();
-        try {
-            WebTarget target = client
-                    .target(Config.GITHUB_API_URL)
-                    .path("/repos/")
-                    .path(Config.GITHUB_USER)
-                    .path("/")
-                    .path(Config.GITHUB_REPO);
-
-            target = predicate.updateTarget(target);
-
-            Invocation.Builder invocation = target
-                    .request("application/vnd.github.VERSION.raw+json")
-                    .header("Authorization", String.format("token %s", Config.GITHUB_API_TOKEN));
-
-            Response response = predicate.doRequest(invocation);
-            if (!Response.Status.Family.SUCCESSFUL.equals(response.getStatusInfo().getFamily())) {
-                throw new IOException(response.getEntity().toString());
-            }
-            if (response.hasEntity()) {
-                return response.readEntity(String.class);
-            }
-            return null;
-        } finally {
-            if (client != null) {
-                client.close();
-            }
-        }
-    }
-
-    public void updateStatus(String sha, String contributor, State state) throws IOException {
-        doRequest(new Predicate() {
-            @Override
-            public WebTarget updateTarget(WebTarget target) {
-                return target.path("/statuses/").path(sha);
-            }
-
-            @Override
-            public Response doRequest(Invocation.Builder invocation) {
-
-                JSONObject stateObject = new JSONObject(new JSONTokener(getClass().getResourceAsStream("/OCA-status.json")));
-                stateObject.put("context", stateObject.getString("context").replaceAll(":githubid:", contributor));
-                stateObject.put("description", stateObject.getString("description").replaceAll(":githubid:", contributor));
-                stateObject.put("state", state.name().toLowerCase());
-
-                return invocation.post(Entity.entity(stateObject.toString(), MediaType.TEXT_PLAIN_TYPE));
-            }
-        });
-    }
+    // POST /repos/:owner/:repo/statuses/:sha
+    void updateStatus(String sha, String committer, State state) throws IOException;
 
     // POST /repos/:owner/:repo/issues/:number/comments
-    public void createCommentOnIssue(String issueNumber, String commentText) throws IOException {
-        doRequest(new Predicate() {
-            @Override
-            public WebTarget updateTarget(WebTarget target) {
-                return target.path("/issues/").path(issueNumber).path("comments");
-            }
-
-            @Override
-            public Response doRequest(Invocation.Builder invocation) {
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("body", commentText);
-
-                return invocation.post(Entity.entity(jsonObject.toString(), MediaType.TEXT_PLAIN_TYPE));
-            }
-        });
-    }
+    void createCommentOnIssue(String issueNumber, String commentText) throws IOException;
 
     // GET /repos/:owner/:repo/pulls/:pullNumber
-    public String getPullRequestInfo(String pullNumber) throws IOException {
-        return doRequest(new Predicate() {
-            @Override
-            public WebTarget updateTarget(WebTarget target) {
-                return target.path("/pulls/").path(pullNumber);
-            }
-
-            @Override
-            public Response doRequest(Invocation.Builder invocation) {
-                return invocation.get();
-            }
-        });
-    }
+    String getPullRequestInfo(String pullNumber) throws IOException;
 
     // GET /repos/:owner/:repo/pulls/:pullNumber/commits/page/:page
-    public String getPullRequestCommits(final String pullRequestNumber) throws IOException {
-        Client client = ClientBuilder.newClient();
-        try {
-            WebTarget target = client
-                    .target(Config.GITHUB_API_URL)
-                    .path("/repos/")
-                    .path(Config.GITHUB_USER)
-                    .path("/")
-                    .path(Config.GITHUB_REPO)
-                    .path("/pulls/")
-                    .path(pullRequestNumber)
-                    .path("/commits");
+    String getPullRequestCommits(String pullRequestNumber) throws IOException;
 
-            boolean next;
-            int page = 1;
-            JSONArray result = new JSONArray();
-            do {
-                WebTarget pageTarget = target.queryParam("page", page);
-                Invocation.Builder invocation = pageTarget
-                        .request("application/vnd.github.VERSION.raw+json")
-                        .header("Authorization", String.format("token %s", Config.GITHUB_API_TOKEN));
-                Response response = invocation.get();
+    // GET /orgs/:repo/teams
+    String getTeams(String organisation) throws IOException;
 
-                if (!Response.Status.Family.SUCCESSFUL.equals(response.getStatusInfo().getFamily())) {
-                    throw new IOException(response.getEntity().toString());
-                }
-
-                if (response.hasEntity()) {
-                    JSONArray chunk = new JSONArray(response.readEntity(String.class));
-                    for (int i=0; i<chunk.length(); i++) {
-                        result.put(chunk.get(i));
-                    }
-                }
-
-                next = response.getHeaderString("Link") != null && response.getHeaderString("Link").contains("next");
-                page++;
-            } while (next);
-
-            return result.toString();
-        } finally {
-            if (client != null) {
-                client.close();
-            }
-        }
-
-
-
-    }
-
+    // GET /teams/:teamId/members
+    String getTeamMembers(String teamId) throws IOException;
 }

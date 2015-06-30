@@ -1,7 +1,7 @@
 package org.opennms.github.plugins.oca.handlers;
 
 import org.json.JSONObject;
-import org.opennms.github.plugins.oca.Contributor;
+import org.opennms.github.plugins.oca.Committer;
 import org.opennms.github.plugins.oca.GithubApi;
 import org.opennms.github.plugins.oca.OCAChecker;
 
@@ -22,12 +22,11 @@ public class PullRequestHandler extends AbstractHandler {
     public Response handle(OCAChecker ocaChecker, String payload) throws IOException, URISyntaxException {
         String pullRequestNumber = extractPullRequestNumber(payload);
         String sha = extractSha(payload);
-        Set<String> contributorSet = getContributorSet(pullRequestNumber);
-        for (String eachContributor : contributorSet) {
-            boolean hasOcaSigned = ocaChecker.hasUserOCASigned(eachContributor);
-            getGithubApi().updateStatus(sha, eachContributor, hasOcaSigned ? GithubApi.State.Success : GithubApi.State.Error);
+        Set<Committer> committerSet = getCommitterSet(pullRequestNumber);
+        for (Committer eachCommitter : committerSet) {
+            boolean hasOcaSigned = updateStatus(sha, eachCommitter, ocaChecker);
             if (!hasOcaSigned) {
-                String content = loadWelcomeMessage(ocaChecker, eachContributor);
+                String content = loadWelcomeMessage(eachCommitter);
                 getGithubApi().createCommentOnIssue(pullRequestNumber, content);
             }
         }
@@ -44,15 +43,18 @@ public class PullRequestHandler extends AbstractHandler {
         return payloadObject.getJSONObject("pull_request").getJSONObject("head").getString("sha");
     }
 
-    private String loadWelcomeMessage(OCAChecker ocaChecker, String user) throws IOException, URISyntaxException {
-        Contributor contributor = ocaChecker.getContributor(user);
-        URL resourceURL = getClass().getResource("/oca-welcome.md");
-        byte[] bytes = Files.readAllBytes(Paths.get(resourceURL.getPath()));
+    private String loadWelcomeMessage(Committer contributor) throws IOException, URISyntaxException {
+        final URL resourceURL = getClass().getResource("/oca-welcome.md");
+        final byte[] bytes = Files.readAllBytes(Paths.get(resourceURL.getPath()));
+
         String content = new String(bytes);
-        content = content.replaceAll(":githubid:", user);
-        if (contributor != null) {
-            content = content.replaceAll(":user:", contributor.getName());
+        String githubId;
+        if (contributor.getGithubId() != null) {
+            githubId = String.format("@%s", contributor.getGithubId());
+        } else {
+            githubId = String.format("%s (%s)", contributor.getName(), contributor.getEmail());
         }
+        content = content.replaceAll(":githubid:", githubId);
         return content;
     }
 }

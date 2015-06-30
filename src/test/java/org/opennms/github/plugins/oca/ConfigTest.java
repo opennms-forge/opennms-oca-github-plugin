@@ -10,7 +10,7 @@ public class ConfigTest {
 
     @After
     public void resetProperties() throws IllegalAccessException, NoSuchFieldException {
-        System.clearProperty(Config.PROPERTY_FILE_LOCATION_PROPERTY_NAME);
+        System.clearProperty(Config.PROPERTY_FILE_LOCATION_PROPERTY_KEY);
         Field field = Config.class.getDeclaredField("properties");
         field.setAccessible(true);
         field.set(null, null);
@@ -25,12 +25,15 @@ public class ConfigTest {
         Assert.assertNotNull(Config.GITHUB_WEBHOOK_SECRET);
         Assert.assertNotNull(Config.OCA_WIKI_URL_PAGE_RAW_EDIT);
         Assert.assertNotNull(Config.OCA_REDO_COMMENT_REGEXP);
+        Assert.assertNotNull(Config.OCA_MANUALLY_APPROVE);
+        Assert.assertNotNull(Config.OCA_TRUSTED_TEAM);
+        Assert.assertNull(Config.MAPPING_FILE_LOCATION);
     }
 
     // checks that the default properties can be overridden by a properties file
     @Test
     public void testCustom() {
-        System.setProperty(Config.PROPERTY_FILE_LOCATION_PROPERTY_NAME, "target/test-classes/custom.properties");
+        System.setProperty(Config.PROPERTY_FILE_LOCATION_PROPERTY_KEY, "target/test-classes/custom.properties");
 
         Assert.assertEquals(Config.getProperty("github.api.url", "bla"), "http://opennms.org");
         Assert.assertEquals(Config.getProperty("github.api.token", "bla"), "ulf ulf ulf");
@@ -38,8 +41,11 @@ public class ConfigTest {
         Assert.assertEquals(Config.getProperty("github.repository", "bla"), "custom-repository");
 
         Assert.assertEquals(Config.getProperty("github.webhook.secret", "bla"), "some custom secret");
-
-        Assert.assertEquals(Config.getProperty("oca.redo.regexp", "bla"), "custom regexp");
+        Assert.assertEquals(Config.getProperty("oca.regexp.approve", "bla"), "custom regexp 2");
+        Assert.assertEquals(Config.getProperty("oca.regexp.redo", "bla"), "custom regexp");
+        Assert.assertEquals(Config.getProperty("oca.trusted.team", "bla"), "custom team");
         Assert.assertEquals(Config.getProperty("oca.url.edit-raw-page", "bla"), "custom page");
+
+        Assert.assertEquals(Config.getProperty("mapping.file.location", "bla"), "/tmp/dummy.properties");
     }
 }

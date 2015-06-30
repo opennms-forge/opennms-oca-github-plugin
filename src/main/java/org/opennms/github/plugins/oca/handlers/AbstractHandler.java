@@ -2,9 +2,12 @@ package org.opennms.github.plugins.oca.handlers;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.opennms.github.plugins.oca.Committer;
 import org.opennms.github.plugins.oca.GithubApi;
+import org.opennms.github.plugins.oca.OCAChecker;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,30 +20,42 @@ abstract class AbstractHandler implements Handler {
         this.githubApi = githubApi;
     }
 
-    protected Set<String> getContributorSet(String pullRequestNumber) throws IOException {
+    protected Set<Committer> getCommitterSet(String pullRequestNumber) throws IOException {
         String commits = githubApi.getPullRequestCommits(pullRequestNumber);
         JSONArray commitJsonArray = new JSONArray(commits);
-        return extractContributorSet(commitJsonArray);
+        return extractCommitterSet(commitJsonArray);
     }
 
     protected GithubApi getGithubApi() {
         return githubApi;
     }
 
-    protected static Set<String> extractContributorSet(JSONArray commitJsonArray) {
-        Set<String> contributorSet = new HashSet<>();
+    protected static Set<Committer> extractCommitterSet(JSONArray commitJsonArray) {
+        Set<Committer> contributorSet = new HashSet<>();
         for (int i = 0; i < commitJsonArray.length(); i++) {
             // We have to exclude commits with no committer
             JSONObject eachElement = commitJsonArray.getJSONObject(i);
+            JSONObject committer = eachElement.getJSONObject("commit").getJSONObject("committer");
+
             if (eachElement.isNull("committer")) {
-                // TODO MVR we may have to add a mapping for email or user name to github ids
-                JSONObject committer = eachElement.getJSONObject("commit").getJSONObject("committer");
-                contributorSet.add(String.format("%s (%s)", committer.getString("name"), committer.getString("email")));
+                Committer eachCommitter = new Committer();
+                eachCommitter.setName(committer.getString("name"));
+                eachCommitter.setEmail(committer.getString("email"));
+                contributorSet.add(eachCommitter);
             } else {
                 String committerId = eachElement.getJSONObject("committer").getString("login");
-                contributorSet.add(committerId);
+                Committer eachCommitter = new Committer();
+                eachCommitter.setGithubId(committerId);
+                eachCommitter.setName(committer.getString("name"));
+                contributorSet.add(eachCommitter);
             }
         }
         return contributorSet;
+    }
+
+    protected boolean updateStatus(String sha, Committer committer, OCAChecker ocaChecker) throws IOException, URISyntaxException {
+        boolean hasOcaSigned = ocaChecker.hasUserOCASigned(committer);
+        getGithubApi().updateStatus(sha, committer.getGithubId() != null ? committer.getGithubId() : committer.getEmail(), hasOcaSigned ? GithubApi.State.Success : GithubApi.State.Error);
+        return hasOcaSigned;
     }
 }
