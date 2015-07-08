@@ -46,7 +46,7 @@ public class IssuecommentRequestHandler extends AbstractHandler {
 
         // Add somebody to the oca list manually (e.g. when we do not have a githubid)
         Pattern pattern = Pattern.compile(Config.OCA_MANUALLY_APPROVE, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(body);
+        Matcher matcher = pattern.matcher(body.trim());
         if (matcher.matches()) {
             String email = matcher.group(2);
             String githubId = matcher.group(3);
