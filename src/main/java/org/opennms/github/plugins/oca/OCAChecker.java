@@ -42,7 +42,7 @@ public class OCAChecker {
 
         for (Contributor eachContributor : contributorList) {
             // we have a github id, so we only have to look in the contributors list
-            if (committer.getGithubId() != null &&  committer.getGithubId().equals(eachContributor.getGithubId())) {
+            if (committer.getGithubId() != null &&  committer.getGithubId().equalsIgnoreCase(eachContributor.getGithubId())) {
                 return true;
             }
             if (committer.getEmail() != null && eachContributor.matchesEmail(committer.getEmail())){
@@ -61,7 +61,7 @@ public class OCAChecker {
         for (Map.Entry<Object, Object> eachEntry : properties.entrySet()) {
             for (Contributor eachContributor : contributorSet) {
                 String githubId = (String) eachEntry.getValue();
-                if (eachContributor.getGithubId().equals(githubId)) {
+                if (eachContributor.getGithubId().equalsIgnoreCase(githubId)) {
                     eachContributor.addEmail((String) eachEntry.getKey());
                 }
             }
