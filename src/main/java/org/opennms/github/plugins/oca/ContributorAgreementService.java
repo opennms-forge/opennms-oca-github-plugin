@@ -5,6 +5,8 @@ import org.opennms.github.plugins.oca.handlers.Handler;
 import org.opennms.github.plugins.oca.handlers.IssuecommentRequestHandler;
 import org.opennms.github.plugins.oca.handlers.PingRequestHandler;
 import org.opennms.github.plugins.oca.handlers.PullRequestHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -29,6 +31,8 @@ import java.util.Map;
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/")
 public class ContributorAgreementService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ContributorAgreementService.class);
 
     private final Mac mac;
 
@@ -67,7 +71,11 @@ public class ContributorAgreementService {
             @HeaderParam("X-Hub-Signature") String signatureUsingSecret,
             String payload) throws IOException {
 
+        LOG.info("Payload request with eventType = '{}', uniqueId = '{}', signature = '{}' received.", eventType, uniqueId, signatureUsingSecret);
+        LOG.debug("Payload body: {}", payload);
+
         if (!isSignatureValid(signatureUsingSecret, payload)) {
+            LOG.error("Signature does not match. Received: '{}', Expected: '{}'", signatureUsingSecret, "HIDDEN");
             return Response
                     .status(Response.Status.BAD_REQUEST)
                     .entity("Signature does not match.")
@@ -76,9 +84,10 @@ public class ContributorAgreementService {
 
         Handler actionHandler = responseHandlerMap.get(eventType);
         if (actionHandler == null) {
+            LOG.info("The provided eventType: '{}' is not supported", eventType);
             return Response
                     .status(Response.Status.NOT_IMPLEMENTED)
-                    .entity(String.format("The provided eventType :'%s' is not supported at the moment.", eventType))
+                    .entity(String.format("The provided eventType: '%s' is not supported at the moment.", eventType))
                     .build();
         }
         try {
@@ -88,7 +97,7 @@ public class ContributorAgreementService {
             }
             return Response.status(Response.Status.OK).build();
         } catch (IOException | URISyntaxException io) {
-            // TODO MVR LOG
+            LOG.error(io.getMessage(), io);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }

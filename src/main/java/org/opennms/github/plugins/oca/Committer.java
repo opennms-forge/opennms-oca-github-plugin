@@ -32,6 +32,15 @@ public class Committer {
         return email;
     }
 
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("githubId", githubId)
+                .add("name", name)
+                .add("email", email)
+                .toString();
+    }
+
     public String getName() {
         return name;
     }

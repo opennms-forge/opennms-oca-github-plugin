@@ -5,6 +5,8 @@ import org.json.JSONObject;
 import org.opennms.github.plugins.oca.Committer;
 import org.opennms.github.plugins.oca.GithubApi;
 import org.opennms.github.plugins.oca.OCAChecker;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -13,6 +15,8 @@ import java.util.Set;
 
 
 abstract class AbstractHandler implements Handler {
+
+    protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
     private final GithubApi githubApi;
 
@@ -55,6 +59,7 @@ abstract class AbstractHandler implements Handler {
 
     protected boolean updateStatus(String sha, Committer committer, OCAChecker ocaChecker) throws IOException, URISyntaxException {
         boolean hasOcaSigned = ocaChecker.hasUserOCASigned(committer);
+        LOG.info("OCA signed for committer '{}' is {}", committer, hasOcaSigned);
         getGithubApi().updateStatus(sha, committer.getGithubId() != null ? committer.getGithubId() : committer.getEmail(), hasOcaSigned ? GithubApi.State.Success : GithubApi.State.Error);
         return hasOcaSigned;
     }
