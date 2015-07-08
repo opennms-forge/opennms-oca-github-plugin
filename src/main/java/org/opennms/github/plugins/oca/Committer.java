@@ -1,5 +1,9 @@
 package org.opennms.github.plugins.oca;
 
+import com.google.common.base.MoreObjects;
+
+import java.util.Objects;
+
 public class Committer {
 
     private String githubId;
@@ -30,5 +34,26 @@ public class Committer {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(githubId, name, email);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        if (getClass() == obj.getClass()) {
+            Committer other = (Committer) obj;
+            boolean equals = Objects.equals(githubId, other.githubId) && Objects.equals(name, other.name) && Objects.equals(email, other.email);
+            return equals;
+        }
+        return false;
     }
 }
