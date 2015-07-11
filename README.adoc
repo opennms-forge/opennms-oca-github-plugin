@@ -1,0 +1,111 @@
+# OCA Github Plugin
+
+The `OpenNMS Contributor Agreement Github Plugin` is a Java Web Application
+to help managing the "OpenNMS Contributor Agreements" by handling the according
+link:https://developer.github.com/v3/activity/events/[Github events].
+
+For the link:https://github.com/OpenNMS/opennms[OpenNMS Project] each contributor
+must sign a so called "OpenNMS Contributor Agreement" (OCA) in order to get the contribution accepted.
+
+The OCA Github Plugin shall make this easier.
+
+Basically the idea is that each time a Github Pull Request is created the `OCA Github Plugin` checks if the contributors of the pull request have signed their OCAs.
+If there is no OCA for a user a link:src/main/resources/oca-welcome.md[Welcome Message] is shown.
+
+# Installation
+
+To build the `oca-github-plugin`, invoke
+
+    mvn clean install
+
+After that you can deploy the generated `oca-github-plugin-<version>.war` file to your Java Servlet Container of choice.
+We use Jetty 9.2.11.X, but others should work as well.
+
+The `oca-github-plugin` requires a couple of Properties to be set correctly.
+Please define a Java System property `property.file` while starting your jetty server to point to a `oca-github-plugin.properties` file.
+This can be done, e.g. by modifiing the `jetty.sh` file of your Apache Jetty Distribution:
+
+    -Dproperty.file=/etc/oca-github-plugin.properties
+
+
+# Properties
+
+These properties are supported by the `oca-github-plugin`.
+Please put them in the `oca-github-plugin.properties` as described above in
+order to change a given default value.
+
+
+Required properties need to be set manually in any case.
+But you may need to set optional properties to get the `oca-github-plugin` to work correctly.
+
+You may also want to have a look at the link:src/main/java/org/opennms/github/plugins/oca/Config.java[Config] java file.
+
+.Supported properties
+[options="header,footer"]
+|=======================
+|property name            |required         |default                    | description
+|`github.api.url`         |no               |`https://api.github.com`   | The URL to the Github API.
+|`github.api.token`       |yes              |`(empty)`                  | The Github API token used to authenticate the user against the Github API.
+                                                                          For more details please check out link:https://github.com/blog/1509-personal-api-tokens[this].
+|`github.user`            |no               |`OpenNMS`                  | The Github user or Organization name.
+|`github.repository`      |no               |`opennms`                  | The Github repository of the defined `github.user`, e.g. link:https://github.com/OpenNMS/opennms.
+|`github.webhook.secret`  |yes              |`(empty)`                  | The Github Webhook Secret to be used to verify the signature of the send payload to the `oca-github-plugin` Web application.
+                                                                          For more information please checkout link:https://developer.github.com/webhooks/securing/[this].
+|`mapping.file.location`  |yes              |`null`                     | The location to the additional mapping file. It is used to add additional `github user id` to `email address` mappings.
+|`oca.trusted.team`       |no               |`oca-admins`               | The team which is allowed to interact with the `oca-github-plugin`. The team must exist in `github.user`.
+|`oca.regexp.redo`        |no               |`.*(ulf).*oca.*`           | The Regular Expression which a pull request comment must match in order to redo an OCA check.
+|`oca.regexp.approve`     |no               |`.*(ulf).*approve.* ([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}).*as.* ([a-zA-Z0-9]{1,}[a-zA-Z0-9-]*).*`    | The Regular Expression which a pull request comment msut match in order to manually add a custom `github user id` to `email address` mapping.
+|`oca.url.edit-raw-page`  |no               |`http://www.opennms.org/w/index.php?title=Executed_contributor_agreements&action=raw`                   | The URL where the link:http://www.opennms.org/w/index.php?title=Executed_contributor_agreements[Executed Contributor Agreements] can be found. The result must be in Wikimedia format.
+|=======================
+
+# Interact with the `oca-github-plugin`
+
+image:ulf.jpg[width=125,float=left] In some cases it is necessary to interact with the `oca-github-plugin`.
+Not all github users are allowed to interact, only members of the team `OpenNMS/oca-admins` can interact with the `oca-github-plugin`.
+To interact with the `oca-github-plugin`, just add a comment to the pull request.
+This chapter describes the supported pull request comments.
+
+## Request a recheck of the OCA
+
+If a OCA check fails or a contributor originally hadn't originally signed the OCA and now has,
+a recheck of the OCA can be triggered manually. The comment must match the regular expression of property `oca.regep.redo`, e.g.:
+
+  Ulf can you please recheck the contributors OCA?
+
+
+## Add a custom `github user id` to `email address` mapping
+
+Each git commit has an email address assigned, but not all of the email addresses are known by github.
+In this case we do not know the `github user id`.
+In order to verify a contributor's OCA we need to know the `github user id`.
+The additional mapping file allows us to define those additional mappings.
+The comment must match the regular expression of property `oca.regexp.approve` e.g.:
+
+  Hey Ulf, please approve <custom email> as <github id>.
+
+# License
+
+____________________________________________________________________________
+
+This file is part of oca-github-plugin.
+oca-github-plugin is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+oca-github-plugin is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with oca-github-plugin.  If not, see <http://www.gnu.org/licenses/>.
+____________________________________________________________________________
+
+A copy of the license can be found link:LICENSE[here].
+
+
+# Open issues
+
+ * The link:src/main/resources/oca-welcome.md[Welcome Message] is shown multiple times for a new contributor.
+  This seems to occur when the pull request creator changes the pull request after openening it.
