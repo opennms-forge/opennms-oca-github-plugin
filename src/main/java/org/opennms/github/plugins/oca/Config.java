@@ -40,12 +40,11 @@ public class Config {
 
     public static final String OCA_TRUSTED_TEAM = getProperty("oca.trusted.team", "oca-admins");
 
-    public static final String OCA_REDO_COMMENT_REGEXP = getProperty("oca.regexp.redo", ".*(alfred|ulf).*oca.*");
+    public static final String OCA_REDO_COMMENT_REGEXP = getProperty("oca.regexp.redo", ".*(ulf|alfred).*oca.*");
 
     public static final String OCA_MANUALLY_APPROVE = getProperty("oca.regexp.approve", ".*(ulf|alfred).*approve.* ([A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}).*as.* ([a-zA-Z0-9]{1,}[a-zA-Z0-9-]*).*");
 
-    public static final String OCA_WIKI_URL_PAGE_RAW_EDIT = getProperty("oca.url.edit-raw-page", "http://www.opennms.org/w/index.php?title=Executed_contributor_agreements&action=raw");
-
+    public static final String OCA_WIKI_URL_PAGE_RAW_EDIT = getProperty("oca.url.edit-raw-page", "https://wiki.opennms.org/wiki/Executed_contributor_agreements?action=raw");
 
     private static Properties properties;
 

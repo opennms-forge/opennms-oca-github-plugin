@@ -64,6 +64,7 @@ public class ContributorAgreementService {
         ocaChecker = new OCAChecker(new URL(Config.OCA_WIKI_URL_PAGE_RAW_EDIT), Config.MAPPING_FILE_LOCATION);
 
         // These events are supported by our API
+        // See https://developer.github.com/webhooks/ for more events which github may send
         responseHandlerMap.put("ping", new PingRequestHandler());
         responseHandlerMap.put("pull_request", new PullRequestHandler(githubApi));
         responseHandlerMap.put("issue_comment", new IssuecommentRequestHandler(githubApi));
@@ -75,13 +76,36 @@ public class ContributorAgreementService {
 
     @GET
     @Path("/ping")
-    public Response get() {
+    public Response ping() {
         return Response.status(Response.Status.OK).build();
+    }
+
+    // We had an issue, where ping worked (service is up), but the OCA-List could not be downloaded.
+    // This health check verifies, that a the "OCA-Check" for "mvrueden" is always possible
+    @GET
+    @Path("/health")
+    public Response health() {
+        try {
+            final Committer committer = new Committer();
+            committer.setGithubId("mvrueden");
+            final boolean signed = ocaChecker.hasUserOCASigned(committer);
+            if (!signed) {
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                        .entity("The OCA check for user 'mvrueden' was negative")
+                        .build();
+            }
+        } catch (IOException | URISyntaxException e) {
+            LOG.error("Could not determine if user has signed OCA", e);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("The OCA check could not be performed. See the server's log message for more details.")
+                    .build();
+        }
+        return Response.ok().build();
     }
 
     @POST
     @Path("/payload")
-    public Response post(
+    public Response payload(
             @HeaderParam("X-Github-event") String eventType,
             @HeaderParam("X-Github-Delivery") String uniqueId,
             @HeaderParam("X-Hub-Signature") String signatureUsingSecret,

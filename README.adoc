@@ -27,6 +27,25 @@ This can be done, e.g. by modifiing the `jetty.sh` file of your Apache Jetty Dis
 
     -Dproperty.file=/etc/oca-github-plugin.properties
 
+# Available endpoints
+
+## GET /
+
+Should return a "Hello" message, if the service in gernal came up succesful.
+
+## GET /rest/ping
+
+Returns a 200 OK, if the ReST Service is available.
+
+## GET /rest/health
+
+Returns a 200 OK, if the OCA check for user `mvrueden` was successful.
+Otherwise 500 is returned.
+
+## POST /rest/payload
+
+The Payload URL of the Github Webhook.
+Configure your Webhook to use this resource to send the events to.
 
 # Properties
 
@@ -55,7 +74,7 @@ You may also want to have a look at the link:src/main/java/org/opennms/github/pl
 |`oca.trusted.team`       |no               |`oca-admins`               | The team which is allowed to interact with the `oca-github-plugin`. The team must exist in `github.user`.
 |`oca.regexp.redo`        |no               |`.*(ulf).*oca.*`           | The Regular Expression which a pull request comment must match in order to redo an OCA check.
 |`oca.regexp.approve`     |no               |`.*(ulf).*approve.* ([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}).*as.* ([a-zA-Z0-9]{1,}[a-zA-Z0-9-]*).*`    | The Regular Expression which a pull request comment msut match in order to manually add a custom `github user id` to `email address` mapping.
-|`oca.url.edit-raw-page`  |no               |`http://www.opennms.org/w/index.php?title=Executed_contributor_agreements&action=raw`                   | The URL where the link:http://www.opennms.org/w/index.php?title=Executed_contributor_agreements[Executed Contributor Agreements] can be found. The result must be in Wikimedia format.
+|`oca.url.edit-raw-page`  |no               |`https://wiki.opennms.org/wiki/Executed_contributor_agreements?action=raw`                   | The URL where the link:http://www.opennms.org/w/index.php?title=Executed_contributor_agreements[Executed Contributor Agreements] can be found. The result must be in Wikimedia format.
 |=======================
 
 # Interact with the `oca-github-plugin`

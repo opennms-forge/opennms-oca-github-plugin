@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1
+
+ * Updated the default OpenNMS Wiki URL
+ * Added documentation for available ReST endpoints
+
 ## 1.0
 
 Initial release
