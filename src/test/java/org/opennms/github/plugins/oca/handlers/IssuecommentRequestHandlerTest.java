@@ -37,6 +37,11 @@ public class IssuecommentRequestHandlerTest {
         }
 
         @Override
+        public String readStatus(String ref) throws IOException {
+            return "[]";
+        }
+
+        @Override
         public void createCommentOnIssue(String issueNumber, String commentText) throws IOException {
 
         }

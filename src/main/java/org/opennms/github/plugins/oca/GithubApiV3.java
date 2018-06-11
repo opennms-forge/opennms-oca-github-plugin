@@ -16,9 +16,7 @@
  */
 package org.opennms.github.plugins.oca;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import java.io.IOException;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -27,7 +25,10 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 public class GithubApiV3 implements GithubApi {
 
@@ -87,6 +88,21 @@ public class GithubApiV3 implements GithubApi {
                 stateObject.put("state", state.name().toLowerCase());
 
                 return invocation.post(Entity.entity(stateObject.toString(), MediaType.TEXT_PLAIN_TYPE));
+            }
+        });
+    }
+
+    @Override
+    public String readStatus(String ref) throws IOException {
+        return doRequest(new Predicate() {
+            @Override
+            public WebTarget createTarget(Client client) {
+                return createRepoWebTarget(client).path("/commits/").path(ref).path("/statuses");
+            }
+
+            @Override
+            public Response doRequest(Invocation.Builder invocation) {
+                return invocation.get();
             }
         });
     }

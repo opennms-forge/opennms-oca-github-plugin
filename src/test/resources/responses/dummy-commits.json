@@ -1,0 +1,954 @@
+[
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/j-white/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/j-white/repos",
+      "following_url": "https://api.github.com/users/j-white/following{/other_user}",
+      "starred_url": "https://api.github.com/users/j-white/starred{/owner}{/repo}",
+      "login": "j-white",
+      "followers_url": "https://api.github.com/users/j-white/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/j-white",
+      "subscriptions_url": "https://api.github.com/users/j-white/subscriptions",
+      "received_events_url": "https://api.github.com/users/j-white/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1379749?v=4",
+      "events_url": "https://api.github.com/users/j-white/events{/privacy}",
+      "html_url": "https://github.com/j-white",
+      "site_admin": false,
+      "id": 1379749,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjEzNzk3NDk=",
+      "organizations_url": "https://api.github.com/users/j-white/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-04-30T14:51:31Z",
+        "name": "Jesse White",
+        "email": "jwhite08@gmail.com"
+      },
+      "author": {
+        "date": "2018-04-30T14:51:31Z",
+        "name": "Benjamin Reed",
+        "email": "github@raccoonfink.com"
+      },
+      "tree": {
+        "sha": "1b07ba3e8dfadc479863a8f776a3876c8428ff26",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/1b07ba3e8dfadc479863a8f776a3876c8428ff26"
+      },
+      "message": "HZN-1285: Initial Karaf assembly for Sentinel (#1938)\n\n* HZN-1285: move extender and svc to the container project\r\n\r\n* HZN-1285: move karaf extensions feature to container/\r\n\r\n* HZN-1285: create common sentinel/minion container\r\n\r\n* create a \"shared\" Karaf container in container/shared/\r\n* modify the minion container to extend the shared container\r\n* create a sentinel container that extends the shared container\r\n* create a sentinel repository project that mimics the minion one\r\n\r\n* HZN-1285: make a basic sentinel assembly\r\n\r\n* HZN-1285: refactor features/*/container/karaf/ into features/container/*/\r\n\r\n* HZN-1285: skip \"default\" repository and unpack repo directly into system/\r\n\r\n* HZN-1285: update default ports to avoid conflict with OpenNMS/Minion",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/d73d934340721db0d29b7bd12d3de8c4ab62eba6/comments",
+    "sha": "d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OmQ3M2Q5MzQzNDA3MjFkYjBkMjliN2JkMTJkM2RlOGM0YWI2MmViYTY=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/36e0f7d14fdad5e1e00608735e29a63b0b54b0fa",
+      "sha": "36e0f7d14fdad5e1e00608735e29a63b0b54b0fa",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/36e0f7d14fdad5e1e00608735e29a63b0b54b0fa"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/7582e0707f09e6c385c04e18c766f3a71421de27",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-04-30T21:17:32Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-04-25T15:58:42Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "dc298e8aa674bf18c336ef333d5f7bfcbb9910f5",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/dc298e8aa674bf18c336ef333d5f7bfcbb9910f5"
+      },
+      "message": "initial sentinel assembly packaging",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/7582e0707f09e6c385c04e18c766f3a71421de27",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/7582e0707f09e6c385c04e18c766f3a71421de27/comments",
+    "sha": "7582e0707f09e6c385c04e18c766f3a71421de27",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/7582e0707f09e6c385c04e18c766f3a71421de27",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1Ojc1ODJlMDcwN2YwOWU2YzM4NWMwNGUxOGM3NjZmM2E3MTQyMWRlMjc=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+      "sha": "d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/d73d934340721db0d29b7bd12d3de8c4ab62eba6"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/dda0c01b31df08467f20b3a79caa9ee04e9bef80",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-02T17:31:02Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-02T17:31:02Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "9124c6a6fe403e9f564112b6c20d2b122301291f",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/9124c6a6fe403e9f564112b6c20d2b122301291f"
+      },
+      "message": "HZN-1288: run as sentinel rather than root; do not require jicmp",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/dda0c01b31df08467f20b3a79caa9ee04e9bef80",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/dda0c01b31df08467f20b3a79caa9ee04e9bef80/comments",
+    "sha": "dda0c01b31df08467f20b3a79caa9ee04e9bef80",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/dda0c01b31df08467f20b3a79caa9ee04e9bef80",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OmRkYTBjMDFiMzFkZjA4NDY3ZjIwYjNhNzljYWE5ZWUwNGU5YmVmODA=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/7582e0707f09e6c385c04e18c766f3a71421de27",
+      "sha": "7582e0707f09e6c385c04e18c766f3a71421de27",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/7582e0707f09e6c385c04e18c766f3a71421de27"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "login": "web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/web-flow",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/19864447?v=4",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "html_url": "https://github.com/web-flow",
+      "site_admin": false,
+      "id": 19864447,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-07T17:50:16Z",
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "author": {
+        "date": "2018-05-07T17:50:16Z",
+        "name": "Benjamin Reed",
+        "email": "github@raccoonfink.com"
+      },
+      "tree": {
+        "sha": "9124c6a6fe403e9f564112b6c20d2b122301291f",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/9124c6a6fe403e9f564112b6c20d2b122301291f"
+      },
+      "message": "Merge pull request #1946 from OpenNMS/jira/HZN-1288\n\nHZN-1286-HZN-1288: initial sentinel assembly packaging",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+      "verification": {
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJa8JHYCRBK7hj4Ov3rIwAAdHIIAEEl6IcQhION1SISL1rJmrHB\n+K90orImwuwgbWYBFJLqEF/J/zOPlV0HopVaXn4S4G4M+4njmcI+TOBW9q17iSAo\n1lNdxDs7GQdUEzl6ZWi5m9pOotZbXLy6vppOsDCjh8FTKlN0u8JjW3vVBCBY+gjp\nRqhR0vauReOr/vv6Gy/FjdfrMIMqxD7rttJHM89Mnca2W3CmHHBO3llE8JD7cLzD\na724dep0ywLt40F+mgGJQO9Lrhgo7U7kpFFSEehlTl+IvCu5gregA9Am8bFm2Ewy\noASeYnOCXVqhJSQHd8dFT/z9DzKpTRt9xBxakA+qZGB/HY/EY+bgJm7Ae1VHaAk=\n=B4XE\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 9124c6a6fe403e9f564112b6c20d2b122301291f\nparent d73d934340721db0d29b7bd12d3de8c4ab62eba6\nparent dda0c01b31df08467f20b3a79caa9ee04e9bef80\nauthor Benjamin Reed <github@raccoonfink.com> 1525715416 -0400\ncommitter GitHub <noreply@github.com> 1525715416 -0400\n\nMerge pull request #1946 from OpenNMS/jira/HZN-1288\n\nHZN-1286-HZN-1288: initial sentinel assembly packaging",
+        "verified": true
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/3115dadcf1e0e57b80047e04f0b6afc78323ec7f/comments",
+    "sha": "3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OjMxMTVkYWRjZjFlMGU1N2I4MDA0N2UwNGYwYjZhZmM3ODMyM2VjN2Y=",
+    "parents": [
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+        "sha": "d73d934340721db0d29b7bd12d3de8c4ab62eba6",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/d73d934340721db0d29b7bd12d3de8c4ab62eba6"
+      },
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/dda0c01b31df08467f20b3a79caa9ee04e9bef80",
+        "sha": "dda0c01b31df08467f20b3a79caa9ee04e9bef80",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/dda0c01b31df08467f20b3a79caa9ee04e9bef80"
+      }
+    ]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/e90307d1c124e1e9795cdf9801f17ea5f7c90adc",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-07T20:30:58Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-07T20:30:58Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "74b95f93926ba9168edaef90402a4e84eccc27fe",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/74b95f93926ba9168edaef90402a4e84eccc27fe"
+      },
+      "message": "fix sentinel container permissions",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/e90307d1c124e1e9795cdf9801f17ea5f7c90adc",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/e90307d1c124e1e9795cdf9801f17ea5f7c90adc/comments",
+    "sha": "e90307d1c124e1e9795cdf9801f17ea5f7c90adc",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/e90307d1c124e1e9795cdf9801f17ea5f7c90adc",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OmU5MDMwN2QxYzEyNGUxZTk3OTVjZGY5ODAxZjE3ZWE1ZjdjOTBhZGM=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+      "sha": "3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/3115dadcf1e0e57b80047e04f0b6afc78323ec7f"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/d019a5019275d2c3cf93f0b44d51799e459aa9a2",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-07T20:31:13Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-07T20:31:13Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "6b86814ba9080ce3349280ddf6705ff4bff5b06a",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/6b86814ba9080ce3349280ddf6705ff4bff5b06a"
+      },
+      "message": "remove unused UUID generation",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/d019a5019275d2c3cf93f0b44d51799e459aa9a2",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/d019a5019275d2c3cf93f0b44d51799e459aa9a2/comments",
+    "sha": "d019a5019275d2c3cf93f0b44d51799e459aa9a2",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/d019a5019275d2c3cf93f0b44d51799e459aa9a2",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OmQwMTlhNTAxOTI3NWQyYzNjZjkzZjBiNDRkNTE3OTllNDU5YWE5YTI=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/e90307d1c124e1e9795cdf9801f17ea5f7c90adc",
+      "sha": "e90307d1c124e1e9795cdf9801f17ea5f7c90adc",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/e90307d1c124e1e9795cdf9801f17ea5f7c90adc"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/ac8ea7cba895383774101d2952990748a2e4569c",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-08T17:49:59Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-08T17:49:59Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "a7862abc5c5f92e31c22c233ecea313dfc15199a",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/a7862abc5c5f92e31c22c233ecea313dfc15199a"
+      },
+      "message": "handle a missing repositories gracefully",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/ac8ea7cba895383774101d2952990748a2e4569c",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/ac8ea7cba895383774101d2952990748a2e4569c/comments",
+    "sha": "ac8ea7cba895383774101d2952990748a2e4569c",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/ac8ea7cba895383774101d2952990748a2e4569c",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OmFjOGVhN2NiYTg5NTM4Mzc3NDEwMWQyOTUyOTkwNzQ4YTJlNDU2OWM=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/d019a5019275d2c3cf93f0b44d51799e459aa9a2",
+      "sha": "d019a5019275d2c3cf93f0b44d51799e459aa9a2",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/d019a5019275d2c3cf93f0b44d51799e459aa9a2"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/mvrueden/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/mvrueden/repos",
+      "following_url": "https://api.github.com/users/mvrueden/following{/other_user}",
+      "starred_url": "https://api.github.com/users/mvrueden/starred{/owner}{/repo}",
+      "login": "mvrueden",
+      "followers_url": "https://api.github.com/users/mvrueden/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/mvrueden",
+      "subscriptions_url": "https://api.github.com/users/mvrueden/subscriptions",
+      "received_events_url": "https://api.github.com/users/mvrueden/received_events",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4202259?v=4",
+      "events_url": "https://api.github.com/users/mvrueden/events{/privacy}",
+      "html_url": "https://github.com/mvrueden",
+      "site_admin": false,
+      "id": 4202259,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjQyMDIyNTk=",
+      "organizations_url": "https://api.github.com/users/mvrueden/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/mvrueden/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/mvrueden/repos",
+      "following_url": "https://api.github.com/users/mvrueden/following{/other_user}",
+      "starred_url": "https://api.github.com/users/mvrueden/starred{/owner}{/repo}",
+      "login": "mvrueden",
+      "followers_url": "https://api.github.com/users/mvrueden/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/mvrueden",
+      "subscriptions_url": "https://api.github.com/users/mvrueden/subscriptions",
+      "received_events_url": "https://api.github.com/users/mvrueden/received_events",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4202259?v=4",
+      "events_url": "https://api.github.com/users/mvrueden/events{/privacy}",
+      "html_url": "https://github.com/mvrueden",
+      "site_admin": false,
+      "id": 4202259,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjQyMDIyNTk=",
+      "organizations_url": "https://api.github.com/users/mvrueden/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/e00cbb7eb376063fd72bf81145b83842c8421290",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-14T08:09:18Z",
+        "name": "Markus von Rüden",
+        "email": "mvr@opennms.com"
+      },
+      "author": {
+        "date": "2018-05-14T08:09:18Z",
+        "name": "Markus von Rüden",
+        "email": "mvr@opennms.com"
+      },
+      "tree": {
+        "sha": "a99795629cf2fd714d58919ded9b014b5fe30c62",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/a99795629cf2fd714d58919ded9b014b5fe30c62"
+      },
+      "message": "Merge remote-tracking branch 'origin/develop' into features/sentinel",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/e00cbb7eb376063fd72bf81145b83842c8421290",
+      "verification": {
+        "reason": "expired_key",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQFEBAABCAAuFiEE8UKZMNvfX+uxyFObrkytQ6kGPg0FAlr5RDEQHG12ckBvcGVu\nbm1zLmNvbQAKCRCuTK1DqQY+DST8B/9q7Uhu3fg5Gs+Y57JP2czHzUH+spCoEqxA\nQEVXbrST2f0atgFoFUqgUUFHgUPXXtzDb/47CtXLSytDcG6p1J9FQS4pKHppEYYu\nUP8R/GK+Kw6ly7MVk5+ltMYjZRWeFtrS1TTikLGrfwF6Se4E27S925oFWFllbzT8\nBXyWVd2aj9PiXspvVijcu6pMieYWC15zSp90K85u6qiWEkpsTjEYlkchv4cOAbfF\nqEP9gcY0JyKXXoHXvblzu+u+aqRGOZNeJyLSuRRVL8sT/ZWXIlEHMlDNLTig2ZqH\nk4j0G/rfZI1UnIk7X6E6Kk/BR3F91icJk1JJWipItRHr0Xc6i4xv\n=a7a/\n-----END PGP SIGNATURE-----",
+        "payload": "tree a99795629cf2fd714d58919ded9b014b5fe30c62\nparent 3115dadcf1e0e57b80047e04f0b6afc78323ec7f\nparent 5ed13fe553de110c0e4d136390a4099953347730\nauthor Markus von Rüden <mvr@opennms.com> 1526285358 +0200\ncommitter Markus von Rüden <mvr@opennms.com> 1526285358 +0200\n\nMerge remote-tracking branch 'origin/develop' into features/sentinel\n",
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/e00cbb7eb376063fd72bf81145b83842c8421290/comments",
+    "sha": "e00cbb7eb376063fd72bf81145b83842c8421290",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/e00cbb7eb376063fd72bf81145b83842c8421290",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OmUwMGNiYjdlYjM3NjA2M2ZkNzJiZjgxMTQ1YjgzODQyYzg0MjEyOTA=",
+    "parents": [
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+        "sha": "3115dadcf1e0e57b80047e04f0b6afc78323ec7f",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/3115dadcf1e0e57b80047e04f0b6afc78323ec7f"
+      },
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/5ed13fe553de110c0e4d136390a4099953347730",
+        "sha": "5ed13fe553de110c0e4d136390a4099953347730",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/5ed13fe553de110c0e4d136390a4099953347730"
+      }
+    ]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/63e5e99141dc9ac844c93fc04ce692a043ac9ace",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-14T18:36:57Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-14T14:25:23Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "c5f2d841ff74a0f5094f82e0c3de1fdb0a921971",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/c5f2d841ff74a0f5094f82e0c3de1fdb0a921971"
+      },
+      "message": "add runInPlace for sentinel\n\nAlso fix complaints about `sed -i` and stdin on Mac OS X\nby using `perl -pi -e` instead.",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/63e5e99141dc9ac844c93fc04ce692a043ac9ace",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/63e5e99141dc9ac844c93fc04ce692a043ac9ace/comments",
+    "sha": "63e5e99141dc9ac844c93fc04ce692a043ac9ace",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/63e5e99141dc9ac844c93fc04ce692a043ac9ace",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OjYzZTVlOTkxNDFkYzlhYzg0NGM5M2ZjMDRjZTY5MmEwNDNhYzlhY2U=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/e00cbb7eb376063fd72bf81145b83842c8421290",
+      "sha": "e00cbb7eb376063fd72bf81145b83842c8421290",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/e00cbb7eb376063fd72bf81145b83842c8421290"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/8e8ce915cec0fec9ffe78723321230fb601e7d73",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-22T14:35:01Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-22T14:35:01Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "47c6bea5982ca6b370a2950c29444db348ddadbe",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/47c6bea5982ca6b370a2950c29444db348ddadbe"
+      },
+      "message": "Merge remote-tracking branch 'origin/jira/HZN-1290' into features/sentinel",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/8e8ce915cec0fec9ffe78723321230fb601e7d73",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/8e8ce915cec0fec9ffe78723321230fb601e7d73/comments",
+    "sha": "8e8ce915cec0fec9ffe78723321230fb601e7d73",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/8e8ce915cec0fec9ffe78723321230fb601e7d73",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OjhlOGNlOTE1Y2VjMGZlYzlmZmU3ODcyMzMyMTIzMGZiNjAxZTdkNzM=",
+    "parents": [
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/63e5e99141dc9ac844c93fc04ce692a043ac9ace",
+        "sha": "63e5e99141dc9ac844c93fc04ce692a043ac9ace",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/63e5e99141dc9ac844c93fc04ce692a043ac9ace"
+      },
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/ac8ea7cba895383774101d2952990748a2e4569c",
+        "sha": "ac8ea7cba895383774101d2952990748a2e4569c",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/ac8ea7cba895383774101d2952990748a2e4569c"
+      }
+    ]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/RangerRick/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/RangerRick/repos",
+      "following_url": "https://api.github.com/users/RangerRick/following{/other_user}",
+      "starred_url": "https://api.github.com/users/RangerRick/starred{/owner}{/repo}",
+      "login": "RangerRick",
+      "followers_url": "https://api.github.com/users/RangerRick/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/RangerRick",
+      "subscriptions_url": "https://api.github.com/users/RangerRick/subscriptions",
+      "received_events_url": "https://api.github.com/users/RangerRick/received_events",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/89252?v=4",
+      "events_url": "https://api.github.com/users/RangerRick/events{/privacy}",
+      "html_url": "https://github.com/RangerRick",
+      "site_admin": false,
+      "id": 89252,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjg5MjUy",
+      "organizations_url": "https://api.github.com/users/RangerRick/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/2ac563d16aa2d1a1bfc6167587aa124372591b30",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-05-22T20:21:53Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "author": {
+        "date": "2018-05-22T20:21:53Z",
+        "name": "Benjamin Reed",
+        "email": "ranger@opennms.org"
+      },
+      "tree": {
+        "sha": "33d9e75568021212242c926714dcd70cf030c42a",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/33d9e75568021212242c926714dcd70cf030c42a"
+      },
+      "message": "fix overlaying filtered resources on top of the shared container",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/2ac563d16aa2d1a1bfc6167587aa124372591b30",
+      "verification": {
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/2ac563d16aa2d1a1bfc6167587aa124372591b30/comments",
+    "sha": "2ac563d16aa2d1a1bfc6167587aa124372591b30",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/2ac563d16aa2d1a1bfc6167587aa124372591b30",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OjJhYzU2M2QxNmFhMmQxYTFiZmM2MTY3NTg3YWExMjQzNzI1OTFiMzA=",
+    "parents": [{
+      "html_url": "https://github.com/mvrueden/opennms/commit/8e8ce915cec0fec9ffe78723321230fb601e7d73",
+      "sha": "8e8ce915cec0fec9ffe78723321230fb601e7d73",
+      "url": "https://api.github.com/repos/mvrueden/opennms/commits/8e8ce915cec0fec9ffe78723321230fb601e7d73"
+    }]
+  },
+  {
+    "committer": {
+      "gists_url": "https://api.github.com/users/mvrueden/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/mvrueden/repos",
+      "following_url": "https://api.github.com/users/mvrueden/following{/other_user}",
+      "starred_url": "https://api.github.com/users/mvrueden/starred{/owner}{/repo}",
+      "login": "mvrueden",
+      "followers_url": "https://api.github.com/users/mvrueden/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/mvrueden",
+      "subscriptions_url": "https://api.github.com/users/mvrueden/subscriptions",
+      "received_events_url": "https://api.github.com/users/mvrueden/received_events",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4202259?v=4",
+      "events_url": "https://api.github.com/users/mvrueden/events{/privacy}",
+      "html_url": "https://github.com/mvrueden",
+      "site_admin": false,
+      "id": 4202259,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjQyMDIyNTk=",
+      "organizations_url": "https://api.github.com/users/mvrueden/orgs"
+    },
+    "author": {
+      "gists_url": "https://api.github.com/users/mvrueden/gists{/gist_id}",
+      "repos_url": "https://api.github.com/users/mvrueden/repos",
+      "following_url": "https://api.github.com/users/mvrueden/following{/other_user}",
+      "starred_url": "https://api.github.com/users/mvrueden/starred{/owner}{/repo}",
+      "login": "mvrueden",
+      "followers_url": "https://api.github.com/users/mvrueden/followers",
+      "type": "User",
+      "url": "https://api.github.com/users/mvrueden",
+      "subscriptions_url": "https://api.github.com/users/mvrueden/subscriptions",
+      "received_events_url": "https://api.github.com/users/mvrueden/received_events",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4202259?v=4",
+      "events_url": "https://api.github.com/users/mvrueden/events{/privacy}",
+      "html_url": "https://github.com/mvrueden",
+      "site_admin": false,
+      "id": 4202259,
+      "gravatar_id": "",
+      "node_id": "MDQ6VXNlcjQyMDIyNTk=",
+      "organizations_url": "https://api.github.com/users/mvrueden/orgs"
+    },
+    "html_url": "https://github.com/mvrueden/opennms/commit/401e68d01578be1238e38e8ba305d971c2815aef",
+    "commit": {
+      "comment_count": 0,
+      "committer": {
+        "date": "2018-06-07T07:21:30Z",
+        "name": "Markus von Rüden",
+        "email": "mvr@opennms.com"
+      },
+      "author": {
+        "date": "2018-06-07T07:21:30Z",
+        "name": "Markus von Rüden",
+        "email": "mvr@opennms.com"
+      },
+      "tree": {
+        "sha": "319a5cfd4ffc470c4d12d4f3deaf5a0d8d51e775",
+        "url": "https://api.github.com/repos/mvrueden/opennms/git/trees/319a5cfd4ffc470c4d12d4f3deaf5a0d8d51e775"
+      },
+      "message": "Merge remote-tracking branch 'origin/develop' into features/sentinel",
+      "url": "https://api.github.com/repos/mvrueden/opennms/git/commits/401e68d01578be1238e38e8ba305d971c2815aef",
+      "verification": {
+        "reason": "expired_key",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQFEBAABCAAuFiEE8UKZMNvfX+uxyFObrkytQ6kGPg0FAlsY3PwQHG12ckBvcGVu\nbm1zLmNvbQAKCRCuTK1DqQY+DU+8B/99zcHShi83Us0u8kyVlZkqUIKPQAbFCOTi\nuvTUoNW6rC53uhx+UWbTYw1FTd4HUX1VSABFgTuRB8qbtBd0tOGD2h3UGjlf8xNS\nxJPsoEuw5Ps5/Uy7RSfLgXRwXtj2xdRuQ0M8e/TtlkSxD1h6m64fX3zla4U8XT46\nVwMaV0eYMv9aVv2OEuWwVqe97zf60AUJDmOo3mznwR/0sHJstR5Wy+3XdkK242ZK\nrkrLmD2xZg13yjn+xivv64cCEKKWVGQMRQQylqhsPwXqwD0wMbmjYWr0fXkW6rJD\nT3HtAt3m+5C8X+RvBGdfV3k7EOhdzB4LIITg7PheicD/ho7d4NlB\n=b7dO\n-----END PGP SIGNATURE-----",
+        "payload": "tree 319a5cfd4ffc470c4d12d4f3deaf5a0d8d51e775\nparent 2ac563d16aa2d1a1bfc6167587aa124372591b30\nparent 1ba842b20fe91cfea35495654332fa19df55873e\nauthor Markus von Rüden <mvr@opennms.com> 1528356090 +0200\ncommitter Markus von Rüden <mvr@opennms.com> 1528356090 +0200\n\nMerge remote-tracking branch 'origin/develop' into features/sentinel\n",
+        "verified": false
+      }
+    },
+    "comments_url": "https://api.github.com/repos/mvrueden/opennms/commits/401e68d01578be1238e38e8ba305d971c2815aef/comments",
+    "sha": "401e68d01578be1238e38e8ba305d971c2815aef",
+    "url": "https://api.github.com/repos/mvrueden/opennms/commits/401e68d01578be1238e38e8ba305d971c2815aef",
+    "node_id": "MDY6Q29tbWl0MTM2OTA2NDA1OjQwMWU2OGQwMTU3OGJlMTIzOGUzOGU4YmEzMDVkOTcxYzI4MTVhZWY=",
+    "parents": [
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/2ac563d16aa2d1a1bfc6167587aa124372591b30",
+        "sha": "2ac563d16aa2d1a1bfc6167587aa124372591b30",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/2ac563d16aa2d1a1bfc6167587aa124372591b30"
+      },
+      {
+        "html_url": "https://github.com/mvrueden/opennms/commit/1ba842b20fe91cfea35495654332fa19df55873e",
+        "sha": "1ba842b20fe91cfea35495654332fa19df55873e",
+        "url": "https://api.github.com/repos/mvrueden/opennms/commits/1ba842b20fe91cfea35495654332fa19df55873e"
+      }
+    ]
+  }
+]
