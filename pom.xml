@@ -28,10 +28,11 @@
                     <excludes>
                         <exclude>src/test/resources/oca-source.txt</exclude>
                         <exclude>src/test/resources/custom.properties</exclude>
-                        <exclude>**/pom.xml</exclude>
                         <exclude>README.adoc</exclude>
                         <exclude>CHANGELOG.adoc</exclude>
                         <exclude>.circleci/config.yml</exclude>
+                        <exclude>**/pom.xml</exclude>
+                        <exclude>**/*.properties</exclude>
                     </excludes>
                 </configuration>
                 <executions>
