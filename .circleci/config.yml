@@ -23,12 +23,18 @@ jobs:
       - run: mvn verify -DskipTests=false
 
       - save_cache:
-                paths:
-                  - ~/.m2
-                key: oca-github-plugin-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2
+          key: oca-github-plugin-{{ checksum "pom.xml" }}
+
+      - run:
+          name: Collect Artifacts
+          command: |
+            mkdir -p /tmp/artifacts;
+            cp target/*.war /tmp/artifacts
 
       - store_test_results:
           path: target/surefire-reports
 
       - store_artifacts:
-          path: target/*.war
+          path: /tmp/artifacts
