@@ -31,6 +31,7 @@
                         <exclude>**/pom.xml</exclude>
                         <exclude>README.adoc</exclude>
                         <exclude>CHANGELOG.adoc</exclude>
+                        <exclude>.circleci/config.yml</exclude>
                     </excludes>
                 </configuration>
                 <executions>
