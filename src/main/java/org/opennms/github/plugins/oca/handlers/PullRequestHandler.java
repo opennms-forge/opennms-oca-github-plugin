@@ -16,18 +16,25 @@
  */
 package org.opennms.github.plugins.oca.handlers;
 
-import org.json.JSONObject;
-import org.opennms.github.plugins.oca.Committer;
-import org.opennms.github.plugins.oca.GithubApi;
-import org.opennms.github.plugins.oca.OCAChecker;
-
-import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+
+import javax.ws.rs.core.Response;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.opennms.github.plugins.oca.Committer;
+import org.opennms.github.plugins.oca.Context;
+import org.opennms.github.plugins.oca.GithubApi;
+import org.opennms.github.plugins.oca.OCAChecker;
 
 public class PullRequestHandler extends AbstractHandler {
 
@@ -36,12 +43,16 @@ public class PullRequestHandler extends AbstractHandler {
     }
 
     public Response handle(OCAChecker ocaChecker, String payload) throws IOException, URISyntaxException {
-        String pullRequestNumber = extractPullRequestNumber(payload);
-        String sha = extractSha(payload);
-        Set<Committer> committerSet = getCommitterSet(pullRequestNumber);
+        final String pullRequestNumber = extractPullRequestNumber(payload);
+        final String sha = extractSha(payload);
+        final Set<Committer> committerSet = getCommitterSet(pullRequestNumber);
+        final List<Context> contextList = readStatus(sha);
         for (Committer eachCommitter : committerSet) {
+            boolean isAlreadyInformed = isAlreadyInformed(contextList, eachCommitter);
             boolean hasOcaSigned = updateStatus(sha, eachCommitter, ocaChecker);
-            if (!hasOcaSigned) {
+
+            // If user was already informed, do not send "welcome message"
+            if (!hasOcaSigned && !isAlreadyInformed) {
                 String content = loadWelcomeMessage(eachCommitter);
                 getGithubApi().createCommentOnIssue(pullRequestNumber, content);
             }
@@ -72,5 +83,25 @@ public class PullRequestHandler extends AbstractHandler {
         }
         content = content.replaceAll(":githubid:", githubId);
         return content;
+    }
+
+    protected static boolean isAlreadyInformed(List<Context> contextList, Committer committer) {
+        final String committerId = committer.getGithubId() != null ? committer.getGithubId() : committer.getEmail();
+        final Optional<Context> first = contextList.stream().filter(c -> c.getName().equals("OCA " + committerId)).findFirst();
+        return first.isPresent();
+    }
+
+    protected List<Context> readStatus(final String sha) throws IOException {
+        final String status = getGithubApi().readStatus(sha);
+        final JSONArray statusArray = new JSONArray(status);
+        final Set<Context> contextList = new HashSet<>();
+        for (int i=0; i<statusArray.length(); i++) {
+            final JSONObject contextObject = statusArray.getJSONObject(i);
+            final String contextName = contextObject.getString("context");
+            final String contextState = contextObject.getString("state");
+            final Context context = new Context(contextName, GithubApi.State.createFrom(contextState));
+            contextList.add(context);
+        }
+        return new ArrayList<>(contextList);
     }
 }

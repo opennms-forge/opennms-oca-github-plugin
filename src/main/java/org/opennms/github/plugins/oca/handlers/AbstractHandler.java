@@ -16,6 +16,11 @@
  */
 package org.opennms.github.plugins.oca.handlers;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.opennms.github.plugins.oca.Committer;
@@ -23,11 +28,6 @@ import org.opennms.github.plugins.oca.GithubApi;
 import org.opennms.github.plugins.oca.OCAChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.HashSet;
-import java.util.Set;
 
 
 abstract class AbstractHandler implements Handler {

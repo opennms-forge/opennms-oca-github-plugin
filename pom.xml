@@ -28,10 +28,11 @@
                     <excludes>
                         <exclude>src/test/resources/oca-source.txt</exclude>
                         <exclude>src/test/resources/custom.properties</exclude>
-                        <exclude>**/pom.xml</exclude>
                         <exclude>README.adoc</exclude>
                         <exclude>CHANGELOG.adoc</exclude>
                         <exclude>.circleci/config.yml</exclude>
+                        <exclude>**/pom.xml</exclude>
+                        <exclude>**/*.properties</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -90,6 +91,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.18.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

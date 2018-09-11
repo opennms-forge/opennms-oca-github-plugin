@@ -16,8 +16,6 @@
  */
 package org.opennms.github.plugins.oca;
 
-import com.google.common.io.ByteStreams;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -34,6 +32,8 @@ import java.util.Objects;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.google.common.io.ByteStreams;
 
 public class OCAChecker {
 

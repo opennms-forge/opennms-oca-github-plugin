@@ -22,12 +22,24 @@ import java.io.IOException;
  * Created by mvrueden on 30/06/15.
  */
 public interface GithubApi {
-    public enum State {
+    enum State {
         Pending, Error, Success;
+
+        public static State createFrom(String string) {
+            for (State state : values()) {
+                if (state.name().equalsIgnoreCase(string)) {
+                    return state;
+                }
+            }
+            throw new IllegalArgumentException("No state with name '" + string +"' found");
+        }
     }
 
     // POST /repos/:owner/:repo/statuses/:sha
     void updateStatus(String sha, String committer, State state) throws IOException;
+
+    // GET /repos/:owner/:repo/commits/:ref/statuses
+    String readStatus(String ref) throws IOException;
 
     // POST /repos/:owner/:repo/issues/:number/comments
     void createCommentOnIssue(String issueNumber, String commentText) throws IOException;
