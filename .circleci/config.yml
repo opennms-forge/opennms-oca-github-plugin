@@ -1,47 +1,18 @@
-version: 2
+version: 2.1
+
+executors:
+  build-executor:
+    docker:
+      - image: opennms/maven:1.8.0.232.b09-3.6.2-b3242
+
 jobs:
   build:
-
-    working_directory: ~/oca-github-plugin
-
-    docker:
-      - image: circleci/openjdk:8-jdk-browsers
-
+    executor: build-executor
     steps:
-
       - checkout
 
-      - restore_cache:
-          key: oca-github-plugin-{{ checksum "pom.xml" }}
+workflows:
+  build-package:
+    jobs:
+      - build
 
-      - run: mvn validate
-
-      - run: mvn dependency:go-offline
-
-      - run: mvn clean package -DskipTests=true
-
-      - run: mvn verify -DskipTests=false
-
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: oca-github-plugin-{{ checksum "pom.xml" }}
-
-      - run:
-          name: Collect Artifacts
-          command: |
-            mkdir -p /tmp/artifacts;
-            cp target/*.war /tmp/artifacts
-
-      - store_test_results:
-          path: target/surefire-reports
-
-      - store_artifacts:
-          path: /tmp/artifacts
-
-      - run:
-          name: Build Docker Container image
-          command: |
-            cp target/*.war docker/deploy
-            cd docker
-            cp docker build -t opennms/oca-check .
