@@ -3,7 +3,7 @@ version: 2.1
 executors:
   build-executor:
     docker:
-      - image: opennms/maven:1.8.0.232.b09-3.6.2-b3242
+      - image: opennms/build-env:1.8.0.232.b09-3.6.2-b3291
 
 jobs:
   build:
