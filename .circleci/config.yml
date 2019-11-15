@@ -38,3 +38,10 @@ jobs:
 
       - store_artifacts:
           path: /tmp/artifacts
+
+      - run:
+          name: Build Docker Container image
+          command: |
+            cp target/*.war docker/deploy
+            cd docker
+            cp docker build -t opennms/oca-check .

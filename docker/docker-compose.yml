@@ -1,0 +1,17 @@
+version: '3'
+services:
+  oca_check:
+    image: test
+    environment:
+      - TZ=Europe/Berlin
+      - GITHUB_API_TOKEN={MY-GITHUB-API-TOKEN}
+      - GITHUB_USER={MY-GITHUB-USER}
+      - GITHUB_REPOSITORY={MY-GITHUB-REPO}
+      - GITHUB_WEBHOOK_SECRET={MY-GITHUB-WEBHOOK-SECRET}
+      - OCA_REGEXP_REDO=.*(alfred|ulf).*oca.*
+      - MAPPING_FILE_LOCATION=/etc/oca-config/oca-mapping.properties
+    volumes:
+      - ./oca-config:/etc/oca-config
+    command: ["-s"]
+    ports:
+      - "8080:8080"
