@@ -1,0 +1,4 @@
+[submodule "docker/oca-config"]
+	path = docker/oca-config
+	url = git@github.com:indigo423/oca-config.git
+	branch = master

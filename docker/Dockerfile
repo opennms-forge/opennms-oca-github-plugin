@@ -26,6 +26,13 @@ COPY container-fs/oca-config/* ${OCA_PLUGIN_CONFIG_DIR}/
 COPY container-fs/entrypoint.sh /
 
 ARG VERSION
+ARG BUILD_URL
+ARG REVISION
+ARG BUILD_BRANCH
+ARG BUILD_DATE
+ARG BUILD_JOB_ID
+ARG BUILD_NUMBER
+ARG SOURCE
 
 LABEL org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.title="OCA Check GitHub Plugin ${VERSION}" \

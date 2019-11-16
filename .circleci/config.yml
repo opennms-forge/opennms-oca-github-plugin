@@ -42,14 +42,48 @@ jobs:
           root: ~/project
           paths:
             - target
+
   oci-build:
     executor: build-executor
     steps:
+      - setup_remote_docker
       - checkout
       - attach_workspace:
           at: ~/project
       - dockerhub-login
-      -
+      - run:
+          name: Build Docker OCI file
+          command: |
+            cd docker
+            ./build.sh
+      - store_artifacts:
+          path: docker/images/container.oci
+      - persist_to_workspace:
+            root: ~/project
+            paths:
+              - docker/images/container.oci
+
+  oci-publish:
+    executor: build-executor
+    steps:
+      - setup_remote_docker
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - dockerhub-login
+      - run:
+          name: Load Docker image
+          command: |
+            docker image load -i docker/images/container.oci
+      - run:
+          name: Tag and push container images
+          command: |
+            cd docker
+            ./tag-n-push.sh
+  oci-deploy:
+    executor: build-executor
+
+
 workflows:
   build-package:
     jobs:
@@ -57,4 +91,12 @@ workflows:
       - oci-build:
           requires:
             - build
+      - oci-publish:
+          requires:
+            - oci-build
+          filters:
+            branches:
+              only:
+                - master
+                - migrate/circleci
 
