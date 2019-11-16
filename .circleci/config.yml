@@ -5,6 +5,15 @@ executors:
     docker:
       - image: opennms/build-env:1.8.0.232.b09-3.6.2-b3291
 
+commands:
+  dockerhub-login:
+    description: "Connect to DockerHub"
+    steps:
+      - run:
+          name: Login to DockerHub
+          command: |
+            docker login -u ${DOCKERHUB_LOGIN} -p ${DOCKERHUB_PASS}
+
 jobs:
   build:
     executor: build-executor
@@ -39,6 +48,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/project
+      - dockerhub-login
+      -
 workflows:
   build-package:
     jobs:
