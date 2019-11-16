@@ -32,6 +32,8 @@
                         <exclude>.circleci/config.yml</exclude>
                         <exclude>**/pom.xml</exclude>
                         <exclude>**/*.properties</exclude>
+                        <exclude>.circleci/**</exclude>
+                        <exclude>docker/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
