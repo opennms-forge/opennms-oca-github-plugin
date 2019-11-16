@@ -29,8 +29,21 @@ jobs:
           path: target/surefire-reports
       - store_artifacts:
           path: /tmp/artifacts
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target
+  oci-build:
+    executor: build-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
 workflows:
   build-package:
     jobs:
       - build
+      - oci-build:
+          requires:
+            - build
 
